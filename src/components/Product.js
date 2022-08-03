@@ -12,10 +12,10 @@ export default function Product() {
         </h2>
         <Row>
           {dataProduct.map((item, index) => (
-            <Col className="mb-3">
-              <Card className="rounded-3 " style={{ width: "12rem" }}>
+            <Col className="mb-3 ">
+              <Card className="rounded-3 bgCard" style={{ width: "14rem" }}>
                 <Card.Img variant="top" src={item.image} />
-                <Card.Body>
+                <Card.Body className="">
                   <Card.Title className="text-danger">{item.name}</Card.Title>
                   <Card.Text className="text-danger">Rp {item.price}</Card.Text>
                 </Card.Body>

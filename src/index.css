@@ -1,4 +1,5 @@
 body {
+  padding: 100px;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -13,5 +14,10 @@ code {
 }
 
 .list-border {
+  border: none !important;
+}
+
+.bgCard {
+  background-color: rgb(241, 197, 197) !important;
   border: none !important;
 }
