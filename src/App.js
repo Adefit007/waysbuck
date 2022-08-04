@@ -6,18 +6,25 @@ import NavbarUser from "./components/NavbarUser";
 import NavbarLogin from "./components/NavbarLogin";
 import { useState } from "react";
 import NavbarAdmin from "./components/NavbarAdmin";
+import Detail from "./pages/Detail";
+import IncomeTransactions from "./pages/IncomeTransactions";
+import AddProduct from "./pages/AddProduct";
+import AddToping from "./pages/AddToping";
+import Profile from "./pages/Profile";
+import Cart from "./pages/Cart";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const [isLogin, setIsLogin] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
-
   return (
-    <div className="App">
-      {isLogin ? <NavbarUser /> : <NavbarLogin />}
-      {isAdmin ? <NavbarUser /> : <NavbarAdmin />}
-
-      <Homepage />
-    </div>
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/product/:id" element={<Detail />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/add-product" element={<AddProduct />} />
+      <Route path="/add-toping" element={<AddToping />} />
+      <Route path="/admin" element={<IncomeTransactions />} />
+    </Routes>
   );
 }
 
