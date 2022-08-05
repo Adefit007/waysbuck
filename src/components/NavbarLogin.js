@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Dropdown,
@@ -50,7 +50,7 @@ export default function NavbarLogin() {
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item className="text-danger" href="#/action-2">
+                <Dropdown.Item className="text-danger">
                   {logoutIcon}
                   <span> Logout</span>
                 </Dropdown.Item>

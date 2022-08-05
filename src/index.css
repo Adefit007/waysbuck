@@ -21,3 +21,30 @@ code {
   background-color: rgb(241, 197, 197) !important;
   border: none !important;
 }
+
+.buttonAuth {
+  background-color: white !important;
+  color: red !important;
+  padding: 5px 10px !important;
+  font-weight: bold !important;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border: 3px solid !important;
+}
+
+.toReg {
+  cursor: pointer;
+}
+
+.toLogin {
+  cursor: pointer;
+}
+
+.formInput {
+  background-color: rgb(250, 236, 236) !important;
+}

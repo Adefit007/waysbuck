@@ -5,25 +5,22 @@ import logo from "../assets/logo.svg";
 export default function NavbarUser() {
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
 
   const [shows, setShows] = useState(false);
 
-  const handleCloses = () => setShows(false);
   const handleShows = () => setShows(true);
-
-  const [isRegisterForm, setIsRegisterForm] = useState(false);
-  const [isLoginForm, setIsLoginForm] = useState(false);
+  const handleCloses = () => setShows(false);
 
   const switchLogin = () => {
-    setIsRegisterForm(false);
-    setIsLoginForm(false);
+    setShow(true);
+    setShows(false);
   };
 
   const switchRegister = () => {
-    setIsRegisterForm(true);
-    setIsLoginForm(true);
+    setShows(true);
+    setShow(false);
   };
 
   return (
@@ -34,13 +31,21 @@ export default function NavbarUser() {
             <img src={logo} style={{ maxWidth: "70px" }} alt="logobrand" />
           </Navbar.Brand>
           <Nav>
-            <Nav.Link className="me-3 fw-bolder text-danger">
-              <Button variant="danger" onClick={handleShow}>
+            <Nav.Link className=" fw-bolder text-danger">
+              <Button
+                className="buttonAuth"
+                variant="danger"
+                onClick={handleShow}
+              >
                 Login
               </Button>
             </Nav.Link>
             <Nav.Link className="me-5 fw-bolder text-danger">
-              <Button variant="danger" onClick={handleShows}>
+              <Button
+                className="buttonAuth"
+                variant="danger"
+                onClick={handleShows}
+              >
                 Signup
               </Button>
               <Modal show={show} onHide={handleClose}>
@@ -53,7 +58,7 @@ export default function NavbarUser() {
                         controlId="exampleForm.ControlInput1"
                       >
                         <Form.Control
-                          className="border-danger"
+                          className="formInput border-danger"
                           type="email"
                           placeholder="your email"
                           autoFocus
@@ -64,7 +69,7 @@ export default function NavbarUser() {
                         controlId="exampleForm.ControlPassword1"
                       >
                         <Form.Control
-                          className="border-danger"
+                          className="formInput border-danger"
                           type="password"
                           placeholder="your password"
                           autoFocus
@@ -78,9 +83,12 @@ export default function NavbarUser() {
                   <div className="mt-3 text-center">
                     <p>
                       Dont have an account please{" "}
-                      <Button className="text-danger" onClick={switchRegister}>
+                      <strong
+                        className="toReg text-danger"
+                        onClick={switchRegister}
+                      >
                         Register
-                      </Button>{" "}
+                      </strong>
                     </p>
                   </div>
                 </Modal.Body>
@@ -94,7 +102,7 @@ export default function NavbarUser() {
                       controlId="exampleForm.ControlName"
                     >
                       <Form.Control
-                        className="border-danger"
+                        className="formInput border-danger"
                         type="text"
                         placeholder="your name"
                         autoFocus
@@ -105,7 +113,7 @@ export default function NavbarUser() {
                       controlId="exampleForm.ControlInput1"
                     >
                       <Form.Control
-                        className="border-danger"
+                        className="formInput border-danger"
                         type="email"
                         placeholder="your email"
                         autoFocus
@@ -117,7 +125,7 @@ export default function NavbarUser() {
                     >
                       <Form.Control
                         type="password"
-                        className="border-danger"
+                        className="formInput border-danger"
                         placeholder="your password"
                         autoFocus
                       />
@@ -129,9 +137,12 @@ export default function NavbarUser() {
                   <div className="mt-3 text-center">
                     <p>
                       Already have an account please{" "}
-                      <Button className="text-danger" onClick={switchLogin}>
+                      <strong
+                        className="toLogin text-danger"
+                        onClick={switchLogin}
+                      >
                         Login
-                      </Button>{" "}
+                      </strong>
                     </p>
                   </div>
                 </Modal.Body>
