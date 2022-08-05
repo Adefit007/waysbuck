@@ -90,7 +90,7 @@ export let dataIncome = [
     address: "jl.elang IV",
     postcode: "62738",
     income: 500000,
-    status: "success",
+    status: "Success",
   },
   {
     id: "2",
@@ -98,7 +98,7 @@ export let dataIncome = [
     address: "jl.kalimantan",
     postcode: "17488",
     income: 29000,
-    status: "success",
+    status: "Success",
   },
   {
     id: "3",
@@ -122,7 +122,7 @@ export let dataIncome = [
     address: "jl.Bali ",
     postcode: "32178",
     income: 10000000,
-    status: "canceled",
+    status: "Canceled",
   },
   {
     id: "6",
@@ -130,6 +130,6 @@ export let dataIncome = [
     address: "jl.elang IV",
     postcode: "62738",
     income: 500000,
-    status: "success",
+    status: "Success",
   },
 ];

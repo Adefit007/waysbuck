@@ -27,7 +27,7 @@ function AddProduct() {
                 />
                 <Form.Control type="file" className="mb-4" />
               </Form.Group>
-              <Button className="btn btn-danger" style={{ width: "70%" }}>
+              <Button className="btn btn-danger" style={{ width: "100%" }}>
                 Add Product
               </Button>
             </Form>

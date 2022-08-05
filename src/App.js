@@ -13,12 +13,13 @@ import AddToping from "./pages/AddToping";
 import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
 import { Route, Routes } from "react-router-dom";
+import { dataProduct } from "./components/DataDummy";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Homepage />} />
-      <Route path="/product/:id" element={<Detail />} />
+      <Route path="/product/:id" element={<Detail data={dataProduct} />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/add-product" element={<AddProduct />} />

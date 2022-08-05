@@ -3,8 +3,10 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import { dataTopping } from "../components/DataDummy";
 import product1 from "../assets/product1.svg";
 import NavbarLogin from "../components/NavbarLogin";
+import { useParams } from "react-router-dom";
 
-function Detail() {
+function Detail(props) {
+  let { id } = useParams();
   return (
     <div>
       <NavbarLogin />
@@ -12,7 +14,7 @@ function Detail() {
         <Row>
           <Col xs={12} md={5}>
             <img
-              src={product1}
+              src={props.data[id].image}
               style={{ width: "80%" }}
               className="img-fluid"
               alt="transaction"
@@ -21,7 +23,7 @@ function Detail() {
           <Col xs={12} md={7} style={{ backgroundColor: "white" }}>
             <div>
               <h1 className="text-start text-danger fw-bold">
-                Ice Coffee Palm Sugar
+                {props.data[id].name}
               </h1>
             </div>
             <div className="mb-5">
@@ -29,7 +31,7 @@ function Detail() {
                 className="text-start text-danger"
                 style={{ fontSize: "22px" }}
               >
-                Rp. 25.000,-
+                Rp. {props.data[id].price}
               </p>
             </div>
             <div className="mb-5 mt-3">

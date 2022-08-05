@@ -48,3 +48,16 @@ code {
 .formInput {
   background-color: rgb(250, 236, 236) !important;
 }
+
+.success {
+  color: rgb(71, 225, 71);
+}
+.canceled {
+  color: red;
+}
+.waiting {
+  color: rgb(211, 232, 75);
+}
+.ontheway {
+  color: rgb(75, 206, 232);
+}

@@ -34,7 +34,22 @@ export default function IncomeTransaction() {
                 <td style={{ border: "1px solid grey" }}>{item.address}</td>
                 <td style={{ border: "1px solid grey" }}>{item.postcode}</td>
                 <td style={{ border: "1px solid grey" }}>Rp.{item.income}</td>
-                <td style={{ border: "1px solid grey" }}>{item.status}</td>
+                <td
+                  style={{ border: "1px solid grey" }}
+                  className={
+                    item.status === "Success"
+                      ? "success"
+                      : item.status === "Canceled"
+                      ? "canceled"
+                      : item.status === "Waiting Approve"
+                      ? "waiting"
+                      : item.status === "On the way"
+                      ? "ontheway"
+                      : ""
+                  }
+                >
+                  {item.status}
+                </td>
               </tr>
             ))}
           </tbody>
