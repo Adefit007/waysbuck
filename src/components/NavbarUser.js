@@ -82,7 +82,7 @@ export default function NavbarUser() {
                 <Modal.Body closeButton>
                   <div>
                     <h1 className="mb-4 text-danger fw-bolder">Login</h1>{" "}
-                    <Form onSubmit={handleOnSubmit}>
+                    {/* <Form onSubmit={handleOnSubmit}>
                       <Form.Group
                         className="mb-3"
                         controlId="exampleForm.ControlInput1"
@@ -114,7 +114,33 @@ export default function NavbarUser() {
                       <Button variant="danger" type="submit" className="w-100">
                         Submit
                       </Button>
-                    </Form>
+                    </Form> */}
+                    <form onSubmit={handleOnSubmit}>
+                      <div className="mb-3">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          name="email"
+                          aria-describedby="emailHelp"
+                          placeholder="email"
+                          onChange={handleChange}
+                        />
+                      </div>
+                      <div className="mb-3">
+                        <input
+                          type="password"
+                          class="form-control"
+                          name="email"
+                          id="password"
+                          onChange={handleChange}
+                          placeholder="Password"
+                        />
+                      </div>
+                      <button type="submit" class="btn btn-danger">
+                        Submit
+                      </button>
+                    </form>
                   </div>
                   <div className="mt-3 text-center">
                     <p>
