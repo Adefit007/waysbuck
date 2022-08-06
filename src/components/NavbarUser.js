@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, Container, Form, Modal, Nav, Navbar } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.svg";
+import { UserContext } from "../context/userContext";
 
 export default function NavbarUser() {
   const [show, setShow] = useState(false);
-
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
   const [shows, setShows] = useState(false);
-
   const handleShows = () => setShows(true);
   const handleCloses = () => setShows(false);
 
@@ -20,6 +20,36 @@ export default function NavbarUser() {
 
   const switchRegister = () => {
     setShows(true);
+    setShow(false);
+  };
+
+  const [login, setLogin] = useState({});
+
+  const handleChange = (e) => {
+    setLogin({
+      ...login,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const navigate = useNavigate();
+  const [state, dispatch] = useContext(UserContext);
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const data = {
+      email,
+      password,
+    };
+
+    console.log(data);
+    dispatch({
+      type: "LOGIN_SUCCESS",
+      payload: data,
+    });
     setShow(false);
   };
 
@@ -52,7 +82,7 @@ export default function NavbarUser() {
                 <Modal.Body closeButton>
                   <div>
                     <h1 className="mb-4 text-danger fw-bolder">Login</h1>{" "}
-                    <Form>
+                    <Form onSubmit={handleOnSubmit}>
                       <Form.Group
                         className="mb-3"
                         controlId="exampleForm.ControlInput1"
@@ -60,6 +90,9 @@ export default function NavbarUser() {
                         <Form.Control
                           className="formInput border-danger"
                           type="email"
+                          id="email"
+                          name="email"
+                          onChange={handleChange}
                           placeholder="your email"
                           autoFocus
                         />
@@ -71,11 +104,14 @@ export default function NavbarUser() {
                         <Form.Control
                           className="formInput border-danger"
                           type="password"
+                          name="password"
+                          onChange={handleChange}
+                          id="password"
                           placeholder="your password"
                           autoFocus
                         />
                       </Form.Group>
-                      <Button variant="danger" className="w-100">
+                      <Button variant="danger" type="submit" className="w-100">
                         Submit
                       </Button>
                     </Form>
@@ -96,7 +132,7 @@ export default function NavbarUser() {
               <Modal show={shows} onHide={handleCloses}>
                 <Modal.Body>
                   <h1 className="mb-4 text-danger fw-bolder">Register</h1>{" "}
-                  <Form>
+                  <Form onSubmit={handleOnSubmit}>
                     <Form.Group
                       className="mb-3"
                       controlId="exampleForm.ControlName"
@@ -130,7 +166,7 @@ export default function NavbarUser() {
                         autoFocus
                       />
                     </Form.Group>
-                    <Button variant="danger" className="w-100">
+                    <Button variant="danger" type="submit" className="w-100">
                       Submit
                     </Button>
                   </Form>

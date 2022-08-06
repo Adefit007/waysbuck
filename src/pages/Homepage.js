@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Card, Container } from "react-bootstrap";
 import background from "../assets/bg.svg";
 import NavbarLogin from "../components/NavbarLogin";
 import NavbarUser from "../components/NavbarUser";
 import Product from "../components/Product";
+import { UserContext } from "../context/userContext";
 
 export default function Homepage() {
-  const [isLogin, setIsLogin] = useState(true);
-
+  const [state, dispatch] = useContext(UserContext);
+  console.log(state);
   return (
     <>
-      {isLogin ? (
+      {state.isLogin ? (
         <div>
           <Container className="">
             <NavbarLogin />
